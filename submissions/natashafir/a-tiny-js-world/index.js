@@ -1,9 +1,9 @@
 /* Refer to https://github.com/OleksiyRudenko/a-tiny-JS-world for the task details
-   Complete the below for code reviewers' convenience:
+ Complete the below for code reviewers' convenience:
 
-   Code repository: _put repo URL here_
-   Web app: _put project's github pages URL here_
-   */
+ Code repository: _put repo URL here_
+ Web app: _put project's github pages URL here_
+ */
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
@@ -15,21 +15,21 @@ function Inhabitants(species, name, gender, legs, hands, saying) {
     this.legs = legs;
     this.hands = hands;
     this.saying = saying;
-    this.sayHi = function() {
-        print( "My name is " + this.name + ". I'm " + this.species + ". My gender is " + this.gender +
-            ". I have " + this.legs + " legs and " + this.hands + " hands. " + this.saying);
-    };
 }
+
+Inhabitants.prototype.sayHi = function () {
+    return ( "My name is " + this.name + ". I'm " + this.species + ". My gender is " + this.gender +
+    ". I have " + this.legs + " legs and " + this.hands + " hands. " + this.saying)
+};
 
 const woman = new Inhabitants('human', 'Emilia', 'female', 2, 2, 'Hello, World!');
 const man = new Inhabitants('human', 'Efrain', 'male', 2, 2, 'Nice to meet you!');
 const cat = new Inhabitants('cat', 'Fluffy', 'female', 4, 0, 'Meow!');
 const dog = new Inhabitants('dog', 'Buddy', 'male', 4, 0, 'Woof-woof!');
 
-woman.sayHi();
-man.sayHi();
-cat.sayHi();
-dog.sayHi();
+let inhabitants = [woman, man, cat, dog];
+
+inhabitants.forEach(element => print(element.sayHi()));
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
